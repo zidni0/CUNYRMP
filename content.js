@@ -32,6 +32,19 @@
     return "rmp-ext-star-red";
   }
 
+  function statBadgeClass(value, type) {
+    if (type === "difficulty") {
+      if (value <= 2.5) return "rmp-ext-stat-badge--low";
+      if (value <= 3.5) return "rmp-ext-stat-badge--mid";
+      return "rmp-ext-stat-badge--high";
+    }
+    if (type === "wouldtake") {
+      if (value < 33) return "rmp-ext-stat-badge--low";
+      if (value < 67) return "rmp-ext-stat-badge--mid";
+      return "rmp-ext-stat-badge--high";
+    }
+  }
+
   function formatDate(raw) {
     if (!raw) return "";
     const d = new Date(raw);
@@ -55,28 +68,28 @@
 
     if (hasRatings && prof.wouldTakeAgainPercent != null && prof.wouldTakeAgainPercent !== -1) {
       const wta = document.createElement("span");
-      wta.className = "rmp-ext-wouldtake";
-      wta.textContent = "Would take again: " + Math.round(prof.wouldTakeAgainPercent) + "%";
+      wta.className = "rmp-ext-stat-badge " + statBadgeClass(prof.wouldTakeAgainPercent, "wouldtake");
+      wta.textContent = "Would take: " + Math.round(prof.wouldTakeAgainPercent) + "%";
       row1.appendChild(wta);
+    }
+
+    if (hasRatings) {
+      const cnt = document.createElement("span");
+      cnt.className = "rmp-ext-ratings";
+      cnt.textContent = prof.numRatings === 1 ? "1 rating" : prof.numRatings + " ratings";
+      row1.appendChild(cnt);
     }
     panel.appendChild(row1);
 
-    const row2 = document.createElement("div");
-    row2.className = "rmp-ext-stats";
     if (hasRatings) {
+      const row2 = document.createElement("div");
+      row2.className = "rmp-ext-stats";
       const diff = document.createElement("span");
-      diff.className = "rmp-ext-difficulty";
+      diff.className = "rmp-ext-stat-badge " + statBadgeClass(prof.avgDifficulty, "difficulty");
       diff.textContent = "Difficulty: " + prof.avgDifficulty.toFixed(1);
       row2.appendChild(diff);
-
-      const cnt = document.createElement("span");
-      cnt.className = "rmp-ext-ratings";
-      cnt.textContent = "(" + (prof.numRatings === 1 ? "1 rating" : prof.numRatings + " ratings") + ")";
-      row2.appendChild(cnt);
-    } else {
-      row2.textContent = "No ratings yet";
+      panel.appendChild(row2);
     }
-    panel.appendChild(row2);
 
     const linkDivider = document.createElement("hr");
     linkDivider.className = "rmp-ext-divider";
@@ -87,7 +100,7 @@
     link.href = url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.textContent = "\uD83D\uDD17 View on Rate My Professors";
+    link.textContent = "View on Rate My Professors";
     panel.appendChild(link);
 
     return panel;
@@ -114,15 +127,20 @@
     meta.textContent = formatDate(res.date);
     reviewDiv.appendChild(meta);
 
-    const expandBtn = document.createElement("button");
-    expandBtn.className = "rmp-ext-expand";
-    expandBtn.type = "button";
-    expandBtn.textContent = "[expand]";
-    expandBtn.addEventListener("click", () => {
-      const expanded = text.classList.toggle("rmp-ext-review-text--expanded");
-      expandBtn.textContent = expanded ? "[collapse]" : "[expand]";
-    });
-    reviewDiv.appendChild(expandBtn);
+    // Check if text is clamped (truncated) and only add expand button if needed
+    setTimeout(() => {
+      if (text.scrollHeight > text.clientHeight) {
+        const expandBtn = document.createElement("button");
+        expandBtn.className = "rmp-ext-expand";
+        expandBtn.type = "button";
+        expandBtn.textContent = "Expand";
+        expandBtn.addEventListener("click", () => {
+          const expanded = text.classList.toggle("rmp-ext-review-text--expanded");
+          expandBtn.textContent = expanded ? "Collapse" : "Expand";
+        });
+        reviewDiv.insertBefore(expandBtn, meta);
+      }
+    }, 0);
 
     panel.insertBefore(reviewDiv, linkDivider);
     panel.insertBefore(reviewDivider, reviewDiv);
