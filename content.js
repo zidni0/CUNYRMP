@@ -39,13 +39,6 @@
     return d.toLocaleDateString("en-US", { month: "short", year: "numeric" });
   }
 
-  function buildNoDataPanel() {
-    const panel = document.createElement("div");
-    panel.className = "rmp-ext-panel rmp-ext-panel--empty";
-    panel.textContent = "No RMP data available";
-    return panel;
-  }
-
   function buildPanel(prof) {
     const url = `https://www.ratemyprofessors.com/professor/${prof.legacyId}`;
     const hasRatings = (prof.numRatings ?? 0) > 0;
@@ -156,7 +149,6 @@
       const ratingRes = await getRating(name, schoolId);
       const prof = ratingRes?.ok ? ratingRes.data : null;
       if (!prof) {
-        el.appendChild(buildNoDataPanel());
         continue;
       }
 

@@ -2,14 +2,13 @@
   display: block;
   max-width: 320px;
   margin-top: 4px;
-  padding: 6px 8px;
+  padding: 8px 10px;
   background: #fff;
-  border: 1px solid #1a1a1a;
-  border-left: 3px solid #1a73e8;
+  border: 3px solid #001f3f;
   border-radius: 5px;
   font-family: system-ui, sans-serif;
-  font-size: 11px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.6;
   color: #1a1a1a;
 }
 
@@ -21,12 +20,14 @@
 .rmp-ext-stats {
   display: flex;
   align-items: baseline;
-  gap: 8px;
+  gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 4px;
 }
 
 .rmp-ext-stars {
-  font-weight: 700;
+  font-weight: 900;
+  font-size: 14px;
 }
 
 .rmp-ext-star-green  { color: #1a6e35; }
@@ -35,21 +36,28 @@
 .rmp-ext-star-gray   { color: #555; }
 
 .rmp-ext-wouldtake {
-  color: #444;
+  color: #333;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .rmp-ext-difficulty {
-  color: #444;
+  color: #333;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .rmp-ext-ratings {
-  color: #777;
+  color: #555;
+  font-weight: 600;
+  font-size: 11px;
 }
 
 .rmp-ext-divider {
   border: none;
-  border-top: 1px solid #e0e0e0;
-  margin: 5px 0;
+  border-top: 2px solid #001f3f;
+  margin: 8px -10px;
+  padding: 0;
 }
 
 .rmp-ext-review {
@@ -57,13 +65,15 @@
 }
 
 .rmp-ext-review-text {
-  margin: 0 0 2px;
+  margin: 0 0 4px;
   font-style: italic;
-  color: #333;
+  color: #222;
+  font-weight: 500;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  font-size: 12px;
 }
 
 .rmp-ext-review-text--expanded {
