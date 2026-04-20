@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "RMP for CUNY Schedule Builder",
+  "version": "1.0.0",
+  "description": "Shows Rate My Professors ratings next to instructor names on CUNY Schedule Builder.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://sb.cunyfirst.cuny.edu/*",
+    "https://www.ratemyprofessors.com/*"
+  ],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://sb.cunyfirst.cuny.edu/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
