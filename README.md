@@ -72,73 +72,73 @@ No build tools, no dependencies. Just vanilla JavaScript and CSS.
 
 Follow these steps to install on your local Chrome browser. New to Chrome extensions? No problem—we'll walk you through it.
 
-### Step 1: Access Extensions Page
+### Step 1: Click on the green button
 
 ![Step 1](./installation-guide/1.png)
 
 Open Chrome and navigate to the extensions management page. You can either type the URL directly or use the menu icon.
 
-### Step 2: Find Developer Mode Toggle
+### Step 2: Click Download Zip
 
 ![Step 2](./installation-guide/2.png)
 
 Look for the "Developer mode" toggle in the top-right corner and click it to enable advanced features.
 
-### Step 3: Developer Mode Enabled
+### Step 3: Click the downloaded zip
 
 ![Step 3](./installation-guide/3.png)
 
 Once enabled, new buttons appear: "Load unpacked", "Pack extension", and "Update extensions". These let you install extensions from your computer.
 
-### Step 4: Click "Load Unpacked"
+### Step 4: Click extract all
 
 ![Step 4](./installation-guide/4.png)
 
 Click the "Load unpacked" button. This opens a folder browser where you'll select the extension's directory.
 
-### Step 5: Navigate to Extension Folder
+### Step 5: Complete extraction
 
 ![Step 5](./installation-guide/5.png)
 
 Browse to where you downloaded or cloned the `rmp-cuny-ext` folder and select it. Make sure you're selecting the folder with `manifest.json` inside.
 
-### Step 6: Extension Installed Successfully
+### Step 6: Go to your extension 
 
-![Step 6](./installation-guide/6.png)
+![Step 6](./installation-guide/7.png)
 
 The extension now appears in your extensions list with a blue icon and "RMP for CUNY Schedule Builder" name. It's ready to use.
 
 ### Step 7: Pin the Extension
 
-![Step 7](./installation-guide/7.png)
+![Step 7](./installation-guide/8.png)
 
 Click the puzzle icon (extensions menu) and look for RMP. Click the pin icon next to it to add it to your toolbar for easy access.
 
 ### Step 8: Open CUNY Schedule Builder
 
-![Step 8](./installation-guide/8.png)
+![Step 8](./installation-guide/9.png)
 
 Go to [CUNY Schedule Builder](https://sb.cunyfirst.cuny.edu) and log in with your credentials as usual.
 
 ### Step 9: Open Extension Popup
 
-![Step 9](./installation-guide/9.png)
+![Step 9](./installation-guide/10.png)
 
 Click the RMP icon in your toolbar (top-right) to open the extension popup. You'll see the campus selection dropdown.
 
 ### Step 10: Select Your Campus
 
-![Step 10](./installation-guide/10.png)
+![Step 10](./installation-guide/6.png)
 
 Click the dropdown and select your CUNY campus from the list (Hunter College, Baruch, CCNY, etc.).
 
-### Step 11: Click Apply
+### Step 11: Go to Schedule builder and click puzzle piece
 
 ![Step 11](./installation-guide/11.png)
 
 After selecting your campus, click the "Apply" button to save your choice. You'll see a confirmation message.
 
-### Step 12: Refresh the Schedule Page
+### Step 12: Choose your college and click apply!
 
 ![Step 12](./installation-guide/12.png)
 
