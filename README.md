@@ -108,25 +108,25 @@ Browse to where you downloaded or cloned the `rmp-cuny-ext` folder and select it
 
 The extension now appears in your extensions list with a blue icon and "RMP for CUNY Schedule Builder" name. It's ready to use.
 
-### Step 7: Pin the Extension
+### Step 7: Manage extension
 
 ![Step 7](./installation-guide/8.png)
 
 Click the puzzle icon (extensions menu) and look for RMP. Click the pin icon next to it to add it to your toolbar for easy access.
 
-### Step 8: Open CUNY Schedule Builder
+### Step 8: Toggle developer mode
 
 ![Step 8](./installation-guide/9.png)
 
 Go to [CUNY Schedule Builder](https://sb.cunyfirst.cuny.edu) and log in with your credentials as usual.
 
-### Step 9: Open Extension Popup
+### Step 9: Load Unpacked
 
 ![Step 9](./installation-guide/10.png)
 
 Click the RMP icon in your toolbar (top-right) to open the extension popup. You'll see the campus selection dropdown.
 
-### Step 10: Select Your Campus
+### Step 10: Choose the downloaded folder
 
 ![Step 10](./installation-guide/6.png)
 
